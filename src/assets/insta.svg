@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200">
+  <defs>
+    <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#ffdb73"/>
+      <stop offset="12%"  stop-color="#ffcb52"/>
+      <stop offset="25%"  stop-color="#ff8c40"/>
+      <stop offset="40%"  stop-color="#f2351f"/>
+      <stop offset="55%"  stop-color="#c42e8f"/>
+      <stop offset="75%"  stop-color="#8b2fc9"/>
+      <stop offset="100%" stop-color="#4f5bd5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect x="5" y="5" width="90" height="90" rx="22" ry="22"
+        fill="url(#ig-grad)"/>
+
+  <!-- Camera border -->
+  <rect x="13" y="13" width="74" height="74" rx="17" ry="17"
+        fill="none" stroke="white" stroke-width="5"/>
+
+  <!-- Lens ring -->
+  <circle cx="50" cy="50" r="18"
+          fill="none" stroke="white" stroke-width="5"/>
+
+  <!-- Sparkle dot -->
+  <circle cx="74" cy="26" r="4" fill="white"/>
+</svg>

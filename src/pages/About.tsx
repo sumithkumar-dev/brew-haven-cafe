@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Coffee, Users, Wifi, Heart } from "lucide-react";
 import { galleryImages } from "../data/gallery";
+import instaImage from "../assets/insta.jpg";
+import { ArrowRight } from "lucide-react";
 
 const values = [
   { icon: Coffee, title: "Craft Over Speed", text: "Every cup is pulled by hand. We'd rather you wait a minute than serve you something average." },
@@ -53,6 +55,81 @@ export default function About() {
         </div>
         <img src={galleryImages[17]} alt="Community" className="rounded-2xl w-full h-[480px] object-cover" />
       </section>
+	  <section className="bg-[#0f0f0f] text-white py-24 px-6 md:px-12 lg:px-20 overflow-hidden relative">
+  {/* Decorative Circles */}
+  <div className="absolute top-24 right-16 w-8 h-8 rounded-full border border-caramel/40" />
+  <div className="absolute bottom-24 left-20 w-5 h-5 rounded-full border border-caramel/30" />
+
+  <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
+    {/* Instagram Preview */}
+    <motion.div
+      initial={{ opacity: 0, x: -30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+    >
+      <img
+        src={instaImage}
+        alt="Brew Haven Instagram"
+        className="w-full rounded-[28px] shadow-2xl border border-white/10"
+      />
+    </motion.div>
+
+    {/* Content */}
+    <motion.div
+      initial={{ opacity: 0, x: 30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+    >
+      <p className="uppercase tracking-[0.35em] text-caramel text-xs mb-6">
+        Instagram
+      </p>
+
+      <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] mb-8">
+        Fresh brews,
+        <br />
+        cozy corners &
+        <br />
+        everyday moments.
+      </h2>
+
+      <p className="text-white/70 text-lg leading-relaxed max-w-md mb-12">
+        Follow Brew Haven for event announcements, new menu launches,
+        latte art, behind-the-scenes stories and everyday café life.
+      </p>
+
+      <div className="flex flex-wrap items-center gap-8">
+
+        <a
+          href="https://instagram.com/brew_haven_cafe"
+          target="_blank"
+          rel="noreferrer"
+          className="group bg-white text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition duration-300"
+        >
+          Follow Us
+        </a>
+
+        <motion.div
+          animate={{ x: [0, 15, 0] }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="flex items-center"
+        >
+          <div className="w-3 h-3 rounded-full bg-caramel" />
+          <div className="w-16 h-[2px] bg-caramel" />
+          <ArrowRight className="w-5 h-5 text-caramel -ml-1" />
+        </motion.div>
+
+      </div>
+    </motion.div>
+
+  </div>
+</section>
     </>
   );
 }

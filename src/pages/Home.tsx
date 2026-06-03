@@ -13,7 +13,7 @@ import SectionHeader from "../components/SectionHeader";
 import { menu } from "../data/menu";
 import { reviews } from "../data/reviews";
 import { galleryImages } from "../data/gallery";
-
+import { events } from "../data/events";
 import cafeImage from "../assets/cafe.jpg";
 
 const featured = menu[4].items.slice(0, 3);
@@ -248,7 +248,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* REVIEWS */}
+      {/* EVENTS PREVIEW */}
+<section className="section">
+  <SectionHeader
+    center
+    eyebrow="Upcoming Events"
+    title="Something's always brewing."
+    subtitle="Live music, workshops and community gatherings at Brew Haven."
+  />
+
+  <div className="grid md:grid-cols-3 gap-6">
+    {events.map((event) => (
+      <div
+        key={event.title}
+        className="group overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-xl transition"
+      >
+        <div className="h-52 overflow-hidden">
+          <img
+            src={event.image}
+            alt={event.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+
+        <div className="p-6">
+          <p className="text-xs uppercase tracking-widest text-caramel mb-2">
+            {event.date}
+          </p>
+
+          <h3 className="text-2xl text-espresso mb-3">
+            {event.title}
+          </h3>
+
+          <p className="text-ink/70 text-sm line-clamp-2">
+            {event.description}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div className="text-center mt-10">
+    <Link to="/events" className="btn-outline">
+      View All Events
+      <ArrowRight className="w-4 h-4" />
+    </Link>
+  </div>
+</section>
+
+	  {/* REVIEWS */}
       <section className="section bg-latte/30">
         <SectionHeader
           center
